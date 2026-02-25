@@ -63,6 +63,11 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 .site-header {
   width: min(1120px, calc(100% - 2.5rem));
   margin: 1rem auto 0;
@@ -124,7 +129,7 @@ a {
 
 .section {
   width: min(1120px, calc(100% - 2.5rem));
-  margin: 5rem auto;
+  margin: 3.8rem auto;
 }
 
 .hero {
@@ -192,6 +197,25 @@ p {
 
 .hero-panel {
   padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.hero-image {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 255px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
 }
 
 .panel-kicker {
@@ -283,6 +307,47 @@ p {
   padding: 1.4rem;
 }
 
+.visual-story {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.image-carousel {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.35rem;
+}
+
+.carousel-item {
+  margin: 0;
+  flex: 0 0 clamp(220px, 30vw, 340px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 190px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.visual-note {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
 .split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -314,6 +379,19 @@ p {
 
 .session-card {
   padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.session-card-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 170px;
+  margin-inline: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
 }
 
 .package-grid {
@@ -324,6 +402,8 @@ p {
 
 .package-card {
   padding: 1.3rem;
+  display: grid;
+  gap: 0.75rem;
 }
 
 .package-card-featured {
@@ -333,7 +413,7 @@ p {
 
 .package-tag {
   display: inline-block;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.2rem;
   font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -342,6 +422,16 @@ p {
   background: #ffe0d1;
   border-radius: 999px;
   padding: 0.28rem 0.6rem;
+}
+
+.package-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 155px;
+  margin-inline: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
 }
 
 .price {
@@ -367,6 +457,30 @@ p {
 
 .page-hero {
   padding: 2rem;
+  overflow: hidden;
+}
+
+.page-hero-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.page-hero-media {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-hero-media img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
 }
 
 .session-list {
@@ -376,10 +490,30 @@ p {
 
 .session-detail {
   padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr) auto;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.session-detail-media {
+  margin: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-detail-media img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 125px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.session-detail-copy {
+  min-width: 0;
 }
 
 .session-date {
@@ -395,6 +529,32 @@ p {
 .timeline {
   display: grid;
   gap: 1rem;
+}
+
+.about-gallery {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.35rem;
+}
+
+.about-gallery figure {
+  margin: 0;
+  flex: 0 0 clamp(200px, 24vw, 280px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  scroll-snap-align: start;
+}
+
+.about-gallery img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 180px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
 }
 
 .timeline-step {
@@ -441,6 +601,36 @@ p {
   margin: 0.75rem 0 0.1rem;
 }
 
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.faq-photo {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq-photo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 230px;
+  margin-inline: auto;
+  display: block;
+}
+
+.faq-photo p {
+  margin: 0;
+  padding: 1rem 1.1rem 1.1rem;
+}
+
 .site-footer {
   width: min(1120px, calc(100% - 2.5rem));
   margin: 2.5rem auto 2rem;
@@ -472,14 +662,29 @@ p {
   .hero,
   .value-grid,
   .split,
-  .session-cards,
-  .package-grid {
+  .visual-story,
+  .faq-layout,
+  .page-hero-layout {
     grid-template-columns: 1fr;
   }
 
+  .session-cards,
+  .package-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .session-detail {
-    flex-direction: column;
-    align-items: flex-start;
+    grid-template-columns: 160px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .session-detail-media img {
+    max-height: 110px;
+  }
+
+  .session-detail .button {
+    width: fit-content;
+    grid-column: 1 / -1;
   }
 }
 
@@ -511,7 +716,7 @@ p {
 
   .section {
     width: calc(100% - 1.5rem);
-    margin: 3.2rem auto;
+    margin: 2.4rem auto;
   }
 
   .hero-panel,
@@ -531,6 +736,40 @@ p {
   .site-footer {
     width: calc(100% - 1.5rem);
     margin-top: 1rem;
+  }
+
+  .page-hero-media,
+  .session-detail-media {
+    display: none;
+  }
+
+  .session-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .session-cards,
+  .package-grid {
+    display: flex;
+    gap: 0.85rem;
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 1rem;
+  }
+
+  .session-card,
+  .package-card {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+
+  .session-card-image,
+  .package-image {
+    max-height: 110px;
+  }
+
+  .faq-photo img {
+    height: 180px;
   }
 }
 
